@@ -116,7 +116,7 @@ function Cover() {
           <img src="images/paravent-soleil.jpg" alt="Paravent Soleil d'Automne" />
         </div>
         <div className="cover-visual-sub">
-          <img src="images/atelier-portrait.jpg" alt="Atelier France-Pascale" />
+          <img src="images/tableau-1.jpg" alt="Tableau de marqueterie de paille" />
         </div>
         <div className="cover-visual-caption mono">Paravent Soleil d'Automne · 2024</div>
       </div>
@@ -128,11 +128,11 @@ function Cover() {
 function Showcase({ onOpen }) {
   const hero = [
     { img: "images/paravent-soleil.jpg", name: "Paravent Soleil d'Automne", tag: "Paravent · 2025", size: "big" },
-    { img: "images/miroir-eventail.jpg", name: "Miroir Éventail de Paille", tag: "Collection éventail", size: "tall" },
-    { img: "images/eclipse-solaire.jpg", name: "Éclipse Solaire", tag: "Panneau d'art mural", size: "tall" },
-    { img: "images/table-eventail-caramel.jpg", name: "Table basse Éventail en folie", tag: "Mobilier · Caramel fumé", size: "wide" },
-    { img: "images/hero-1.jpg", name: "Gros plan · matière", tag: "Paille de seigle · détail", size: "square" },
-    { img: "images/gueridon-hypnose-top.jpg", name: "Plateau · l'Hypnose", tag: "Motif concentrique · détail", size: "square" },
+    { img: "images/miroir-eventail-2.jpg", name: "Miroir Éventail de Paille", tag: "Collection éventail · vue d'ambiance", size: "tall" },
+    { img: "images/eclipse-solaire-2.jpg", name: "Éclipse Solaire", tag: "Panneau d'art mural · détail", size: "tall" },
+    { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "wide" },
+    { img: "images/bijoux-1.jpg", name: "Bijoux de marqueterie", tag: "Paille de seigle · accessoires", size: "square" },
+    { img: "images/gueridon-hypnose-full.jpg", name: "Guéridon l'Hypnose", tag: "Vue d'ensemble · pied tripode", size: "square" },
   ];
   return (
     <section className="showcase">
