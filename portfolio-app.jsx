@@ -127,10 +127,10 @@ function Cover() {
 // ============== Showcase (images phares) ==============
 function Showcase({ onOpen }) {
   const hero = [
-    { img: "images/paravent-soleil.jpg", name: "Paravent Soleil d'Automne", tag: "Paravent · 2025", size: "big" },
+    { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "big" },
     { img: "images/miroir-eventail-2.jpg", name: "Miroir Éventail de Paille", tag: "Collection éventail · vue d'ambiance", size: "tall" },
     { img: "images/eclipse-solaire-2.jpg", name: "Éclipse Solaire", tag: "Panneau d'art mural · détail", size: "tall" },
-    { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "wide" },
+    { img: "images/boite-bijoux.jpg", name: "Boîte à bijoux de marqueterie", tag: "Paille de seigle · objet précieux", size: "wide" },
     { img: "images/bijoux-1.jpg", name: "Bijoux de marqueterie", tag: "Paille de seigle · accessoires", size: "square" },
     { img: "images/gueridon-hypnose-full.jpg", name: "Guéridon l'Hypnose", tag: "Vue d'ensemble · pied tripode", size: "square" },
   ];
@@ -505,8 +505,8 @@ function App() {
         title="Mobilier"
         titleEm="Des objets"
         titleEnd="qui sculptent la lumière."
-        intro="Tables basses, guéridons, paravents. Pièces uniques ou déclinables. Marqueterie intégrale ou en panneaux rapportés — je m'adapte à la logique constructive de vos projets."
-        items={MOBILIER}
+        intro="Tables basses et guéridons. Pièces uniques ou déclinables. Marqueterie intégrale ou en panneaux rapportés — je m'adapte à la logique constructive de vos projets."
+        items={MOBILIER.slice(1)}
         layout={t.mobilierLayout}
         onOpen={setLb}
       />
