@@ -133,7 +133,7 @@ function Showcase({ onOpen }) {
     { img: "images/meli-melo-de-soleil.jpg", name: "Méli-mélo de Soleil", tag: "Collection Soleil · paille de seigle", size: "square", pos: "center 20%" },
     { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide", pos: "center 70%" },
     { img: "images/porte-manteaux.jpeg", name: "Porte-manteaux", tag: "Paille de seigle · objet d'art", size: "square" },
-    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide", pos: "center 30%" },
+    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide" },
   ];
   return (
     <section className="showcase">
