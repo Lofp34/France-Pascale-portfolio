@@ -130,10 +130,10 @@ function Showcase({ onOpen }) {
   const hero = [
     { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "big" },
     { img: "images/mondrian.jpg", name: "Mondrian", tag: "Marqueterie de paille · composition", size: "tall" },
-    { img: "images/meli-melo-de-soleil.jpg", name: "Méli-mélo de Soleil", tag: "Collection Soleil · paille de seigle", size: "square" },
-    { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide" },
+    { img: "images/meli-melo-de-soleil.jpg", name: "Méli-mélo de Soleil", tag: "Collection Soleil · paille de seigle", size: "square", pos: "center 20%" },
+    { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide", pos: "center 30%" },
     { img: "images/porte-manteaux.jpeg", name: "Porte-manteaux", tag: "Paille de seigle · objet d'art", size: "square" },
-    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide" },
+    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide", pos: "center 70%" },
   ];
   return (
     <section className="showcase">
@@ -151,7 +151,7 @@ function Showcase({ onOpen }) {
         <div className="showcase-grid">
           {hero.map((h, i) => (
             <div key={i} className={"showcase-item reveal sc-" + h.size} onClick={() => onOpen({img: h.img, name: h.name})}>
-              <div className="showcase-frame"><img src={h.img} alt={h.name} /></div>
+              <div className="showcase-frame"><img src={h.img} alt={h.name} style={h.pos ? {objectPosition: h.pos} : undefined} /></div>
               <div className="showcase-caption">
                 <span className="serif"><em>{h.name}</em></span>
                 <span className="mono mute">{h.tag}</span>
