@@ -8,12 +8,13 @@ const MOBILIER = [
   { id: "eclat", name: "Table basse Éclat graphique", desc: "Composition géométrique · Anthracite", img: "images/table-eclat-graphique.jpg", num: "№ 03", year: "2024", dim: "110 × 65 cm" },
   { id: "orbite", name: "Guéridon l'Orbite Saphir", desc: "Paille teintée bleu nuit · Pied tripode", img: "images/gueridon-orbite-saphir.jpg", num: "№ 04", year: "2024", dim: "Ø 45 × 55 cm" },
   { id: "hypnose", name: "Guéridon l'Hypnose", desc: "Motif concentrique · Vue du plateau", img: "images/gueridon-hypnose-top.jpg", num: "№ 05", year: "2024", dim: "Ø 45 × 55 cm" },
+  { id: "gigognes", name: "Tables gigognes", desc: "Marqueterie de paille · Ensemble de tables", img: "images/table-gigognes.png", num: "№ 06", year: "2024", dim: "Sur mesure" },
 ];
 
 const PANNEAUX = [
   { id: "hab1", name: "Habillage de meuble", desc: "Panneau de niche · Motif éclat", img: "images/habillage-meuble.jpg", num: "№ 06", dim: "Sur mesure" },
   { id: "mobilier", name: "Panneau mural d'exception", desc: "Marqueterie paille de seigle · Grand format", img: "images/mobilier-1.jpg", num: "№ 07", dim: "Sur mesure" },
-  { id: "eclipse", name: "Éclipse solaire", desc: "Tableau panneau · Rayonnement graphique", img: "images/eclipse-solaire.jpg", num: "№ 08", dim: "Sur mesure" },
+  { id: "eclipse", name: "Soleil Tête de Lit", desc: "Tête de lit · Motif soleil rayonnant", img: "images/soleil-tete-de-lit.jpg", num: "№ 08", dim: "Sur mesure" },
   { id: "hero1", name: "Composition contemporaine", desc: "Motif rayonnant · Paille dorée", img: "images/hero-1.jpg", num: "№ 09", dim: "Sur mesure" },
   { id: "hero2", name: "Étude de lumière", desc: "Panneau mural · Paille naturelle", img: "images/hero-2.jpg", num: "№ 10", dim: "Sur mesure" },
 ];
@@ -23,7 +24,7 @@ const DECO = [
   { id: "rond-xl", name: "Miroir Rondeur de Paille XL", desc: "Paille blonde · Cadre soyeux", img: "images/miroir-rond-xl.jpg", num: "№ 12", dim: "Ø 70 cm" },
   { id: "onde", name: "Miroir Onde de Paille", desc: "Paille teintée · Motif ondulé", img: "images/miroir-onde.jpg", num: "№ 13", dim: "Ø 45 cm" },
   { id: "envolee", name: "Miroir Envolée de Paille", desc: "Paille naturelle · Silhouette organique", img: "images/miroir-envolee.jpg", num: "№ 14", dim: "40 × 60 cm" },
-  { id: "eventail-miroir", name: "Miroir Éventail de Paille", desc: "Collection éventail · Plusieurs coloris", img: "images/miroir-eventail.jpg", num: "№ 15", dim: "Format sur mesure" },
+  { id: "eventail-miroir", name: "Miroir Éventail de Paille Bleue", desc: "Collection éventail · Paille bleue", img: "images/miroir-eventail-de-paille-bleu.jpg", num: "№ 15", dim: "Format sur mesure" },
   { id: "rondeur", name: "Miroir Rondeur de Paille", desc: "Paille dorée · Finition or 24 carats", img: "images/miroir-rondeur-dore.jpg", num: "№ 16", dim: "Ø 45 cm" },
   { id: "art-deco", name: "Miroir Art Déco", desc: "Paille dorée · Inspiration années 30", img: "images/miroir-art-deco.jpg", num: "№ 17", dim: "60 × 45 cm" },
   { id: "horloge", name: "Horloge Éclat Solaire", desc: "Paille de seigle · Motif solaire", img: "images/horloge-solaire.jpg", num: "№ 18", dim: "Ø 50 cm" },
@@ -113,7 +114,7 @@ function Cover() {
       </div>
       <div className="cover-visual">
         <div className="cover-visual-main">
-          <img src="images/paravent-soleil.jpg" alt="Paravent Soleil d'Automne" />
+          <img src="images/paravent-verso.png" alt="Paravent Soleil d'Automne" />
         </div>
         <div className="cover-visual-sub">
           <img src="images/tableau-1.jpg" alt="Tableau de marqueterie de paille" />
@@ -128,11 +129,11 @@ function Cover() {
 function Showcase({ onOpen }) {
   const hero = [
     { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "big" },
-    { img: "images/miroir-eventail-2.jpg", name: "Miroir Éventail de Paille", tag: "Collection éventail · vue d'ambiance", size: "tall" },
-    { img: "images/eclipse-solaire-2.jpg", name: "Éclipse Solaire", tag: "Panneau d'art mural · détail", size: "square" },
-    { img: "images/boite-bijoux.jpg", name: "Boîte à bijoux de marqueterie", tag: "Paille de seigle · objet précieux", size: "wide" },
-    { img: "images/bijoux-1.jpg", name: "Bijoux de marqueterie", tag: "Paille de seigle · accessoires", size: "square" },
-    { img: "images/gueridon-hypnose-full.jpg", name: "Guéridon l'Hypnose", tag: "Vue d'ensemble · pied tripode", size: "wide" },
+    { img: "images/mondrian.jpg", name: "Mondrian", tag: "Marqueterie de paille · composition", size: "tall" },
+    { img: "images/meli-melo-de-soleil.jpg", name: "Méli-mélo de Soleil", tag: "Collection Soleil · paille de seigle", size: "square" },
+    { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide" },
+    { img: "images/porte-manteaux.jpeg", name: "Porte-manteaux", tag: "Paille de seigle · objet d'art", size: "square" },
+    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide" },
   ];
   return (
     <section className="showcase">
