@@ -131,9 +131,9 @@ function Showcase({ onOpen }) {
     { img: "images/collection-soleil.jpg", name: "Collection Soleil", tag: "Ensemble de pièces · Atelier 2025", size: "big" },
     { img: "images/mondrian.jpg", name: "Mondrian", tag: "Marqueterie de paille · composition", size: "tall" },
     { img: "images/meli-melo-de-soleil.jpg", name: "Méli-mélo de Soleil", tag: "Collection Soleil · paille de seigle", size: "square", pos: "center 20%" },
-    { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide", pos: "center 30%" },
+    { img: "images/gueridon-sur-mesure.jpeg", name: "Guéridon sur Mesure", tag: "Paille de seigle · création unique", size: "wide", pos: "center 70%" },
     { img: "images/porte-manteaux.jpeg", name: "Porte-manteaux", tag: "Paille de seigle · objet d'art", size: "square" },
-    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide", pos: "center 70%" },
+    { img: "images/soleil-d-or-noir.jpg", name: "Soleil d'Or Noir", tag: "Contraste or & noir · marqueterie", size: "wide", pos: "center 30%" },
   ];
   return (
     <section className="showcase">
