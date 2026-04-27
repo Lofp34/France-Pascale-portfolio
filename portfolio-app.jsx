@@ -25,7 +25,7 @@ const DECO = [
   { id: "onde", name: "Miroir Onde de Paille", desc: "Paille teintée · Motif ondulé", img: "images/miroir-onde.jpg", num: "№ 13", dim: "Ø 45 cm" },
   { id: "envolee", name: "Miroir Envolée de Paille", desc: "Paille naturelle · Silhouette organique", img: "images/miroir-envolee.jpg", num: "№ 14", dim: "40 × 60 cm" },
   { id: "eventail-miroir", name: "Miroir Éventail de Paille Bleue", desc: "Collection éventail · Paille bleue", img: "images/miroir-eventail-de-paille-bleu.jpg", num: "№ 15", dim: "Format sur mesure" },
-  { id: "rondeur", name: "Miroir Rondeur de Paille", desc: "Paille dorée · Finition or 24 carats", img: "images/miroir-rondeur-dore.jpg", num: "№ 16", dim: "Ø 45 cm" },
+  { id: "rondeur", name: "Miroir Rondeur de Paille", desc: "Paille dorée", img: "images/miroir-rondeur-dore.jpg", num: "№ 16", dim: "Ø 45 cm" },
   { id: "art-deco", name: "Miroir Art Déco", desc: "Paille dorée · Inspiration années 30", img: "images/miroir-art-deco.jpg", num: "№ 17", dim: "60 × 45 cm" },
   { id: "horloge", name: "Horloge Éclat Solaire", desc: "Paille de seigle · Motif solaire", img: "images/horloge-solaire.jpg", num: "№ 18", dim: "Ø 50 cm" },
   { id: "deco1", name: "Horloge Nature Radieuse", desc: "Paille naturelle · Rayonnement vivant", img: "images/deco-1.jpg", num: "№ 19", dim: "Ø 50 cm" },
