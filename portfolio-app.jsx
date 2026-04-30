@@ -186,8 +186,8 @@ function Manifesto() {
           <p>
             Autodidacte puis perfectionnée dans l'atelier de Lison de Caunes,
             je travaille aujourd'hui à Mauguio, près de Montpellier. Chaque brin
-            est fendu, aplani, posé à la main, un par un. Aucune machine. Aucune teinte
-            synthétique qui trahirait la matière.
+            est fendu, aplani, posé à la main, un par un. Aucune machine. Chaque teinte
+            née à la source, dans les mains du cultivateur.
           </p>
           <p>
             Pour les architectes d'intérieur et les décorateurs, je conçois des pièces
