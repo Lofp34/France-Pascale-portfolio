@@ -53,6 +53,15 @@
       flex-shrink: 0;
     }
 
+    .brand-label {
+      font-family: var(--mono);
+      font-size: 7pt;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+
     .brand {
       font-family: var(--serif);
       font-size: 28pt;
@@ -170,6 +179,10 @@
       padding-top: 4mm;
       margin-bottom: 5mm;
       flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 28mm;
+      gap: 5mm;
+      align-items: start;
     }
     .manifesto p {
       font-family: var(--serif);
@@ -177,9 +190,45 @@
       font-size: 12.5pt;
       line-height: 1.38;
       color: var(--ink-dim);
-      max-width: 175mm;
     }
     .manifesto em { color: var(--gold); }
+
+    .nuances {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 5px;
+      padding-top: 4px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nuances::before { content: "◆"; font-size: 5pt; }
+
+    .botte { display: flex; flex-direction: column; gap: 3px; }
+    .botte-photo {
+      width: 28mm;
+      height: 36mm;
+      overflow: hidden;
+      border: 1px solid rgba(201,165,92,0.25);
+    }
+    .botte-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) contrast(1.05);
+    }
+    .botte-caption {
+      font-family: var(--mono);
+      font-size: 5.5pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      line-height: 1.6;
+      text-align: center;
+    }
 
     /* ── Method ── */
     .method-wrap {
@@ -305,14 +354,15 @@
   <!-- ── HEADER ── -->
   <header class="header">
     <div>
+      <div class="brand-label">Atelier</div>
       <div class="brand">France<em>–</em>Pascale</div>
-      <div class="brand-sub">Marqueterie de paille de seigle &middot; Atelier Mauguio &middot; Montpellier</div>
+      <div class="brand-sub">Marqueterie de paille de seigle &middot; Mauguio &middot; Montpellier</div>
     </div>
     <div class="header-right">
       <span class="header-tagline">La lumière, brin après brin.</span>
       <div class="header-meta">
         Portfolio &middot; Édition printemps 2026<br>
-        À l'attention des architectes &amp; décorateurs d'intérieur
+        Particuliers &middot; Architectes &amp; décorateurs d'intérieur
       </div>
     </div>
   </header>
@@ -360,11 +410,20 @@
 
   <!-- ── MANIFESTO ── -->
   <div class="manifesto">
-    <p>
-      Je ne travaille pas la paille. Je travaille <em>la lumière</em> qu'elle capte, qu'elle retient, qu'elle rend.
-      Chaque brin fendu, aplani, posé à la main — aucune machine, chaque teinte <em>née à la source</em>, dans les mains du cultivateur.
-      Pour les architectes d'intérieur, je conçois des pièces qui dialoguent avec l'architecture.
-    </p>
+    <div>
+      <p>
+        Je ne travaille pas la paille. Je travaille <em>la lumière</em> qu'elle capte, qu'elle retient, qu'elle rend.
+        Chaque brin fendu, aplani, posé à la main — aucune machine, chaque teinte <em>née à la source</em>, dans les mains du cultivateur.
+        Pour les particuliers, architectes et décorateurs, je conçois des pièces qui dialoguent avec votre espace.
+      </p>
+      <div class="nuances">Environ 50 nuances disponibles &middot; Échantillons envoyés sur demande</div>
+    </div>
+    <div class="botte">
+      <div class="botte-photo">
+        <img src="images/botte-paille.jpg" alt="Botte de paille de seigle de Bourgogne">
+      </div>
+      <div class="botte-caption">Paille de seigle<br>Bourgogne</div>
+    </div>
   </div>
 
   <!-- ── MÉTHODE ── -->
