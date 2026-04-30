@@ -25,21 +25,25 @@
 
     html, body {
       width: 210mm;
-      height: 297mm;
       background: var(--bg);
       color: var(--ink);
       font-family: var(--sans);
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
-      overflow: hidden;
+      margin: 0 auto;
     }
 
     .page {
       width: 210mm;
-      height: 297mm;
+      min-height: 297mm;
       display: flex;
       flex-direction: column;
       padding: 10mm 12mm 9mm;
+    }
+
+    @media print {
+      html, body { height: 297mm; overflow: hidden; }
+      .page { height: 297mm; min-height: unset; }
     }
 
     /* ── Header ── */
@@ -213,12 +217,26 @@
       width: 28mm;
       height: 36mm;
       overflow: hidden;
-      border: 1px solid rgba(201,165,92,0.25);
+      border: 1px dashed rgba(201,165,92,0.45);
+      background: var(--bg-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .botte-photo img {
       width: 100%; height: 100%;
       object-fit: cover;
       filter: brightness(0.85) contrast(1.05);
+    }
+    .botte-placeholder {
+      font-family: var(--mono);
+      font-size: 5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      padding: 4px;
+      line-height: 1.6;
     }
     .botte-caption {
       font-family: var(--mono);
@@ -420,7 +438,9 @@
     </div>
     <div class="botte">
       <div class="botte-photo">
-        <img src="images/botte-paille.jpg" alt="Botte de paille de seigle de Bourgogne">
+        <img src="images/botte-paille.jpg" alt="Botte de paille de seigle de Bourgogne"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="botte-placeholder" style="display:none">Ajouter<br>botte-paille.jpg<br>dans images/</div>
       </div>
       <div class="botte-caption">Paille de seigle<br>Bourgogne</div>
     </div>
