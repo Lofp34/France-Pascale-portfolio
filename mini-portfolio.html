@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>France–Pascale · Mini Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #15110c;
+      --bg-2:        #1c1812;
+      --ink:         #f2e9d8;
+      --ink-dim:     #c8bca5;
+      --ink-mute:    #8a7f6b;
+      --line:        rgba(242,233,216,0.12);
+      --line-str:    rgba(242,233,216,0.28);
+      --gold:        #c9a55c;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans:  "Inter", -apple-system, sans-serif;
+      --mono:  "JetBrains Mono", monospace;
+    }
+
+    @page { size: A4 portrait; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      padding: 10mm 12mm 9mm;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 6mm;
+      border-bottom: 1px solid var(--line-str);
+      margin-bottom: 6mm;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 28pt;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .brand em { font-style: italic; color: var(--gold); }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .header-right {
+      text-align: right;
+    }
+    .header-tagline {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16pt;
+      color: var(--ink-dim);
+      letter-spacing: -0.01em;
+      margin-bottom: 5px;
+    }
+    .header-meta {
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      line-height: 1.9;
+    }
+
+    /* ── Photos ── */
+    .photos {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 3mm;
+      height: 112mm;
+      flex-shrink: 0;
+      margin-bottom: 5mm;
+    }
+
+    .photo-main {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3mm;
+    }
+
+    .photo-cell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-main img,
+    .photo-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.88) contrast(1.04);
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 9px 7px;
+      background: linear-gradient(transparent, rgba(15,11,7,0.88));
+    }
+    .photo-label-tag {
+      display: block;
+      font-family: var(--mono);
+      font-size: 6pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+    .photo-label-name {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 11pt;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .photo-cell .photo-label-name { font-size: 9.5pt; }
+
+    /* gold inset border on main photo */
+    .photo-main::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(201,165,92,0.35);
+      pointer-events: none;
+    }
+
+    /* ── Manifesto strip ── */
+    .manifesto {
+      border-top: 1px solid var(--line-str);
+      padding-top: 4mm;
+      margin-bottom: 5mm;
+      flex-shrink: 0;
+    }
+    .manifesto p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12.5pt;
+      line-height: 1.38;
+      color: var(--ink-dim);
+      max-width: 175mm;
+    }
+    .manifesto em { color: var(--gold); }
+
+    /* ── Method ── */
+    .method-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 7pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4mm;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--line-str), transparent);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5mm;
+      flex: 1;
+    }
+
+    .step {
+      border-top: 1px solid var(--line-str);
+      padding-top: 3.5mm;
+    }
+
+    .step-num {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 36pt;
+      line-height: 0.85;
+      color: var(--gold);
+      opacity: 0.38;
+      margin-bottom: 5px;
+    }
+
+    .step-label {
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 13pt;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .step-text {
+      font-size: 7.5pt;
+      line-height: 1.55;
+      color: var(--ink-mute);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      flex-shrink: 0;
+      border-top: 1px solid var(--line-str);
+      padding-top: 3.5mm;
+      margin-top: 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18pt;
+      color: var(--gold);
+    }
+
+    .footer-contacts {
+      display: flex;
+      gap: 7mm;
+    }
+    .footer-item {
+      font-family: var(--mono);
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      line-height: 1.7;
+    }
+    .footer-item strong {
+      display: block;
+      font-weight: 400;
+      color: var(--ink-dim);
+      letter-spacing: 0.08em;
+      text-transform: none;
+      font-family: var(--serif);
+      font-size: 9.5pt;
+    }
+
+    /* Print: ensure colors print */
+    @media print {
+      html, body, .page { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div>
+      <div class="brand">France<em>–</em>Pascale</div>
+      <div class="brand-sub">Marqueterie de paille de seigle &middot; Atelier Mauguio &middot; Montpellier</div>
+    </div>
+    <div class="header-right">
+      <span class="header-tagline">La lumière, brin après brin.</span>
+      <div class="header-meta">
+        Portfolio &middot; Édition printemps 2026<br>
+        À l'attention des architectes &amp; décorateurs d'intérieur
+      </div>
+    </div>
+  </header>
+
+  <!-- ── PHOTOS ── -->
+  <div class="photos">
+    <div class="photo-main">
+      <img src="images/paravent-soleil.jpg" alt="Paravent Soleil d'Automne">
+      <div class="photo-label">
+        <span class="photo-label-tag">★ Pièce phare &middot; 2025 &middot; 180 × 165 cm</span>
+        <div class="photo-label-name">Paravent Soleil d'Automne</div>
+      </div>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-cell">
+        <img src="images/collection-soleil.jpg" alt="Collection Soleil">
+        <div class="photo-label">
+          <span class="photo-label-tag">Ensemble &middot; 2025</span>
+          <div class="photo-label-name">Collection Soleil</div>
+        </div>
+      </div>
+      <div class="photo-cell">
+        <img src="images/table-eventail-caramel.jpg" alt="Table Éventail">
+        <div class="photo-label">
+          <span class="photo-label-tag">Mobilier</span>
+          <div class="photo-label-name">Table Éventail Caramel</div>
+        </div>
+      </div>
+      <div class="photo-cell">
+        <img src="images/gueridon-orbite-saphir.jpg" alt="Guéridon Orbite Saphir">
+        <div class="photo-label">
+          <span class="photo-label-tag">Mobilier</span>
+          <div class="photo-label-name">Guéridon Orbite Saphir</div>
+        </div>
+      </div>
+      <div class="photo-cell">
+        <img src="images/miroir-flot.jpg" alt="Miroir Flot de Paille">
+        <div class="photo-label">
+          <span class="photo-label-tag">Objet d'art</span>
+          <div class="photo-label-name">Miroir Flot de Paille</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MANIFESTO ── -->
+  <div class="manifesto">
+    <p>
+      Je ne travaille pas la paille. Je travaille <em>la lumière</em> qu'elle capte, qu'elle retient, qu'elle rend.
+      Chaque brin fendu, aplani, posé à la main — aucune machine, aucune teinte synthétique.
+      Pour les architectes d'intérieur, je conçois des pièces qui dialoguent avec l'architecture.
+    </p>
+  </div>
+
+  <!-- ── MÉTHODE ── -->
+  <div class="method-wrap">
+    <div class="section-label">Méthode de travail</div>
+    <div class="method-grid">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-label">I. Rencontre</div>
+        <div class="step-title">Écouter le projet</div>
+        <p class="step-text">Échange avec l'architecte ou le décorateur. Étude du lieu, des volumes, de la lumière naturelle et des matériaux environnants.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-label">II. Étude</div>
+        <div class="step-title">Dessiner, prélever</div>
+        <p class="step-text">Croquis, propositions de motifs, palette accordée à votre projet. Envoi d'échantillons physiques pour validation tactile et visuelle.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-label">III. Atelier</div>
+        <div class="step-title">Fendre brin à brin</div>
+        <p class="step-text">Fabrication à la main à Mauguio. Chaque brin est fendu, aplani, posé sur support bois. Aucune machine. Photos d'avancement partagées.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <div class="step-label">IV. Livraison</div>
+        <div class="step-title">Installer, fixer</div>
+        <p class="step-text">Conditionnement sur mesure. Livraison en France et à l'international. Coordination pour l'installation — pose collée, vissée ou suspendue.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-brand">France–Pascale</div>
+    <div class="footer-contacts">
+      <div class="footer-item">
+        Atelier
+        <strong>Mauguio, France</strong>
+      </div>
+      <div class="footer-item">
+        Site
+        <strong>france-pascale.com</strong>
+      </div>
+      <div class="footer-item">
+        Délais
+        <strong>6 à 10 semaines</strong>
+      </div>
+      <div class="footer-item">
+        Disponibilité
+        <strong>Sur rendez-vous</strong>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
